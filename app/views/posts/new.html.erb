@@ -1,0 +1,12 @@
+<div class="contents row">
+  <div class="container">
+    <h3>投稿する</h3>
+    <%= form_with model: @post, local: true do |form| %>
+      <%= form.text_field :title, placeholder: "タイトル" %>
+      <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      <%= form.label :image, "画像" %>
+      <%= form.file_field :image %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
