@@ -9,5 +9,6 @@ class LikesController < ApplicationController
     else
       @like = Like.create(post_id: params[:post_id], ip: request.remote_ip)
       redirect_back(fallback_location: root_path)
+    end
   end
 end

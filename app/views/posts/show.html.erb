@@ -3,6 +3,7 @@
     <div class="post__wrapper">
       <p class="post__hedding">
         <%= @post.title%>
+        <%= flash[:notice] %>
       </p>
       <%# <%= link_to "by#{@post.user.name}","/users/#{@post.user_id}", class: :post__user 投稿者の名前をクリックしたらユーザー紹介ページに飛ぶようにしておこう %>
         <%# <div class="prototype__manage">
@@ -21,6 +22,7 @@
           <p class="detail__message">
             <%= @post.text %>
           </p>
+            <%= button_to 'いいね', post_likes_path(@post) %>
         </div>
       </div>
       <%# <div class="prototype__comments">
