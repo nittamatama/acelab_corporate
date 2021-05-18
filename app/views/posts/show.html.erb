@@ -22,7 +22,7 @@
           <p class="detail__message">
             <%= @post.text %>
           </p>
-            <% if Like.find_by(ip: request.remote_ip, post_id: @post.id) %>
+            <% if @post.likes.find_by(ip: request.remote_ip) %>
               <%= button_to "いいね解除", post_like_path(@post), method: :delete %>
             <% else %>
               <%= button_to 'いいね', post_likes_path(@post) %>
