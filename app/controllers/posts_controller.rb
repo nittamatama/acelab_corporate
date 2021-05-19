@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_params, only: [:show, :edit]
+  
   def index
     @posts = Post.all
   end
@@ -12,8 +14,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @likes_count = @post.likes.count
+  end
+
+  def edit
   end
 
   private
@@ -21,5 +25,8 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text, :image)
   end
-
+  
+  def set_params
+    @post = Post.find(params[:id])
+  end
 end
