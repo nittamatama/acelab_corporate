@@ -11,6 +11,10 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
+    @post = Post.new
+    tag_list = params[:post][:tag_name].split('nill')
+    if @post.save
+      @post
   end
 
   def show
@@ -30,3 +34,4 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 end
+
