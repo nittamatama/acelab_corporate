@@ -14,7 +14,12 @@ class PostsController < ApplicationController
     @post = Post.new
     tag_list = params[:post][:tag_name].split('nill')
     if @post.save
-      @post
+      @post.save_tags(tag_list)
+      flash[:success] = '投稿しました'
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def show
