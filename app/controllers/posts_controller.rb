@@ -10,9 +10,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    @post = Post.new
-    tag_list = params[:post][:tag_name].split('nill')
+    @post = Post.new(post_params)
+    @post.save
+    tag_list = params[:post][:tag_ids].split(",")
     if @post.save
       @post.save_tags(tag_list)
       flash[:success] = '投稿しました'
