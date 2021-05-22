@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_params, only: [:show, :edit]
+  before_action :set_params, only: [:show, :edit, :update]
   
   def index
     @posts = Post.all
@@ -27,6 +27,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @tag_list = @post.tags.pluck(:tag_name).split(',')
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.save
+    tag_list = params[:post][:tag_ids].split(',')
+    if post.
   end
 
   private
