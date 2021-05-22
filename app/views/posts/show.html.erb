@@ -27,6 +27,10 @@
               <%= button_to 'いいね', post_likes_path(@post) %>
             <% end %>
             <%= @likes_count %>
+            <% @post.tags.each do |tag| %>
+              <%= tag.tag_name %>
+              <% end %>
+          
         </div>
       </div>
       <%# <div class="prototype__comments">
