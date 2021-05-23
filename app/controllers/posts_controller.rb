@@ -34,7 +34,13 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.save
     tag_list = params[:post][:tag_ids].split(',')
-    if post.
+    if post.update_attributes(post_params)
+      post.save_tags(tag_list)
+      flash[:success] = '投稿を編集しました'
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
   private
