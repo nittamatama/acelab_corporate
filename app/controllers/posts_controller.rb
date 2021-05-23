@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_params, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update]
   
   def index
     @posts = Post.all
@@ -11,7 +11,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
     tag_list = params[:post][:tag_ids].split(",")
     if @post.save
       @post.save_tags(tag_list)
@@ -43,13 +42,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :text, :image)
   end
   
-  def set_params
+  def set_post
     @post = Post.find(params[:id])
   end
 end

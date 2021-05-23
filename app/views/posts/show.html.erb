@@ -8,8 +8,8 @@
       <%# <%= link_to "by#{@post.user.name}","/users/#{@post.user_id}", class: :post__user 投稿者の名前をクリックしたらユーザー紹介ページに飛ぶようにしておこう %>
          <div class="post__manage">
           <%# <% if user_signed_in? && current_user.id == @prototype.user_id %> 
-           <%= link_to "編集する", edit_post_path(@post.id), method: :get, class: :post__btn %> 
-           <%= link_to "削除する", post_path, method: :delete, class: :post__btn %> 
+           <%= link_to "編集する", edit_post_path(@post), method: :get, class: :post__btn %> 
+           <%= link_to "削除する", post_path(@post), method: :delete, class: :post__btn %> 
           <%# <% end %> 
          </div>  
       <div class="post__image">
