@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def index
     @posts = Post.all
@@ -31,7 +31,6 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.save
     tag_list = params[:post][:tag_ids].split(',')
     if post.update_attributes(post_params)
       post.save_tags(tag_list)
@@ -43,7 +42,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to root_path
   end
