@@ -3,7 +3,7 @@
     <div class="form__wrapper">
       <h2 class="page-heading">管理者新規登録</h2>
 
-        <%= form_with model: @admin, url: admin_registration_path, local: true do |f| %>
+        <%= form_with model: @admin, url: admin_registration_path, local: false do |f| %>
 
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
