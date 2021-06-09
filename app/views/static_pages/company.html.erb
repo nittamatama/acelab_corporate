@@ -1,22 +1,14 @@
-<% provide(:title,'会社概要 | 神奈川で歯科技工所をお探しならACEラボまで')%>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-
+<% provide(:title,'会社概要 |')%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-<title>会社概要 | 神奈川で歯科技工所をお探しならACEラボまで<%= yield(:title) %></title>
+
 <meta name="keywords" content="" />
 <meta name="description" content="神奈川県川崎市にある歯科技工所ACEラボの会社概要ページです。" />
-
-<link rel="stylesheet" href="css/style.css" />
 
 <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
-</head>
 <body>
 
 
@@ -24,7 +16,7 @@
 
 <div class="bg_bl"></div>
 
-    <h1><a href="index.html"><img src="img/logo.png" alt="歯科技工所ACEラボのロゴマーク"></a></h1>
+    <h1><a href="index.html"><%= image_tag "logo.png" %></h1>
 
 <a class="menu_btn">
     <span class="top"></span>
@@ -91,7 +83,7 @@ Company Profile
 
 <div class="content">
 <h2 class="effect">会社概要<br>
-<span>会社概要のサンプルになります</span></h2>
+<span>ACEラボの会社概要になります</span></h2>
 <div class="cont_wrap">
 
 <div class="effect">
@@ -154,15 +146,39 @@ TEL.044-280-6437</td>
 
 <div class="effect">
 
-<a id="access"></a>
+<%# GooglemapAPI使用 %>
 <h3>アクセスマップ</h3>
 
-<div class="g_map_base">
-<div class="g_map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12987.487091081664!2d139.6920448!3d35.5321663!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9f97f44a4b0c18!2zQUNF44Op44Oc!5e0!3m2!1sja!2sjp!4v1623027481269!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>" frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>
-</div>
+<style>
+#map {
+  height: 600px;
+  width: 600px
+}
+</style>
 
+<script>
+let map
+
+function inimtMap() {
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 40.7828, lng:-73.9653},
+    zoom: 12,
+});
+
+marker = new google.maps.Marker({
+    position:  {lat: 40.7828, lng:-73.9653},
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+<style>#map {height: 600px;width: 600px;}</style>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 </div>
 
