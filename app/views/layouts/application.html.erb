@@ -7,6 +7,12 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>  
+
+<link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -62,6 +68,19 @@
     </header>
     <%= yield %>
 
+    <div class="box_contact effect">
+    <div class="arrow_tbm"><%= image_tag "sankaku.png" %>
+      <img alt="↓" src="img/sankaku.png">
+    </div>
+    <div class="box_in clfix">
+<div class="btn"><a href="contact.html"><i class="fas fa-envelope"></i>ご注文・お問い合わせはコチラ</a>
+<p>メールでのお問い合わせは<strong>24時間365日受付中！</strong></p></div>
+<div class="tel"><a href="tel:"><i class="fas fa-phone"></i><strong>044-280-6437</strong></a>
+<p>電話対応時間：11：00~15：00 / 17:30~23:00</p></div>
+</div>
+</div><!--/box_contact-->
+
+
     <footer>
       <ul class="f_bn">
         <li><a href="#"><i class="fas fa-book"></i>
@@ -110,17 +129,13 @@
   Copyright (C) MegaPx. All Rights Reserved.
 </address>
 
-<!--　削除禁止【ＰＲ枠】ここから　--> 
-<!--prno.190909ver2.2--> 
-<div class="box_pr"><ul>
-<li>Design by <a href="https://www.megapx.com/" title="ホームページ制作・ロゴデザイン：メガピクス" target="_blank">Megapx</a></li>
-<li>Template by <a href="http://www.s-hoshino.com/" title="HTMLテンプレート配布元：フリー素材屋Hoshino" target="_blank">s-hoshino.com</a></li>
-</ul></div>
-<!--　/削除禁止【ＰＲ枠】ここまで　--> 
+</footer>
 
-    </footer>
+<div class="to_top"><a href="#" title="トップへ戻る">
+<i class="fas fa-chevron-up"></i></a>
+</div>
 
-<div class="to_top"><a href="#" title="トップへ戻る"><i class="fas fa-chevron-up"></i></a></div>
+
 
   </body>
 </html>
