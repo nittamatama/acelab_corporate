@@ -10,22 +10,84 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><%= link_to 'ACEラボ', '/', method: :get %></h1>
-        <% if admin_signed_in? %>
-          <div class="user_nav grid-6">
-            <%= button_to "ログアウト", destroy_admin_session_path, method: :delete %>
-            <a class="post" href="/posts/new">投稿する</a>
-          </div>
-        <% else %>
-          <div class="user_nav grid-6">
-            <%= link_to "ログイン", new_admin_session_path, class: "post" %>
-            <%= link_to "新規登録", new_admin_registration_path, class: "post" %>
-          </div>
-        <% end %>
+    <header>
+      <div class="bg_bl"></div>
+      <a href="index.html"><%= image_tag "logo.png" %>
+
+      <a class="menu_btn">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </a>
+
+      <div class="h_btn"><a href="contact.html"><i class="fas fa-envelope"></i><span>お問合わせ</span></a></div>
+      <div class="h_tel font_mincho"><a href="tel:"><i class="fas fa-phone"></i><span><strong>044-280-6437</strong></span></a></div>
+      <nav id="g_navi">
+        <ul class="navi_base">
+        <li><%= link_to 'HOME','/' %></li>
+        <li><a class="ac_menu">歯科技工物製作について</a>
+      <div class="ac_list">
+        <ul>
+          <li><a href="#">コンセプト</a></li>
+          <li><a href="task.html">業務内容</a></li>
+          <li><a href="#">歯科技工物製作の流れ</a></li>
+          <li><a href="sample.html">歯科技工コラム</a></li>
+        </ul>
       </div>
+      </li>   
+      <li><a class="ac_menu">技工製品・実績</a>
+        <div class="ac_list"></div>
+        </li>  
+      <li><a href="faq.html">FAQ</a></li>
+      <!-- <li><a href="#">イベント情報</a></li> -->
+      <li><a class="ac_menu">会社案内</a>
+        <div class="ac_list">
+        <ul>
+        <li><%= link_to '会社概要', ' /static_pages/company' %></li>
+        <li><a href="#">企業理念</a></li>
+        <li><a href="staff.html">社員紹介</a></li> 
+        <li><a href="#">アクセス</a></li>
+        </ul>
+        </div>
+      </li>
+    </ul>
+</nav>
+
+<ul class="h_sns">
+  <li><a href="#"><i class="fas fa-book"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+      <li><a href="https://www.instagram.com/acelab_2021/"><i class="fab fa-instagram"></i></a></li>
+</ul>
     </header>
     <%= yield %>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<%# <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6"><%= link_to 'ACEラボ', '/', method: :get %></h1>
+        <%# <% if admin_signed_in? %>
+          <%# <div class="user_nav grid-6"> %>
+            <%# <%= button_to "ログアウト", destroy_admin_session_path, method: :delete %> %>
+            <%# <a class="post" href="/posts/new">投稿する</a> %>
+          <%# </div> %>
+        <%# <% else %> 
+          <%# <div class="user_nav grid-6"> %>
+            <%# <%= link_to "ログイン", new_admin_session_path, class: "post" %>
+            <%# <%= link_to "新規登録", new_admin_registration_path, class: "post" %> %>
+          <%# </div> %>
+        <%# <% end %> 
+      <%# </div> %>
+    <%# </header> %> 
