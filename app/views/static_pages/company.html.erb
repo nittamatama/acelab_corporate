@@ -1,130 +1,138 @@
 <% provide(:title,'会社概要 |')%>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-
-<meta name="keywords" content="">
-<meta name="description" content="神奈川県川崎市にある歯科技工所ACEラボの会社概要ページです。" />
 
 <div id="sub_top" class="company">
-Company Profile
+  Company Profile
 </div>
 
 <div class="pankuzu">
-<ul>
-<li><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
-<li>会社概要</li>
-</ul>
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
+    <li>会社概要</li>
+  </ul>
 </div>
 
 <div class="content">
-<h2 class="effect">会社概要<br>
-<span>ACEラボの会社概要になります</span></h2>
-<div class="cont_wrap">
+  <h2 class="effect">会社概要<br>
+    <span>ACEラボの会社概要になります</span></h2>
+  <div class="cont_wrap">
 
-<div class="effect">
-<h3>代表あいさつ</h3>
-<img src="img/img_pr.jpg" alt="代表サンプル" class="img_right">
-  <p>代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。<br>
-代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。<br>
-代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。</p>
+    <div class="effect">
+      <h3>代表あいさつ</h3>
+      <img src="img/img_pr.jpg" alt="代表サンプル" class="img_right">
+      <p>
+        代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。<br>
+        代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。<br>
+        代表あいさつのサンプル文言になります。適当な文言に置き換えてお使いください。</p>
+    </div>
+
+    <div class="effect d_02">
+      <h3>会社概要</h3>
+
+      <table class="table_01">
+        <tr>
+          <th>商　号</th>
+          <td>星野工務店（サンプル社名）</td>
+        </tr>
+        <tr>
+          <th>設　立</th>
+          <td>2021年（令和3年）5月5日</td>
+        </tr>
+        <tr>
+          <th>本　社</th>
+          <td>〒212-0012<br />
+            神奈川県川崎市幸区4-46 アーク2マンション 201<br />
+            TEL.044-280-6437</td>
+        </tr>
+        <tr>
+          <th>代表執行役</th>
+          <td>社長 兼 CEO　星野 一郎 （ほしの いちろう）<br>
+            専務 CFO　星野 次郎 （ほしの じろう）</td>
+        </tr>
+        <tr>
+          <th>資本金</th>
+          <td>１２，３４５億円（２０１８年３月３１日現在）</td>
+        </tr>
+        <tr>
+          <th>業務内容</th>
+          <td>建設一式工事、土木一式工事、不動産取引</td>
+        </tr>
+        <tr>
+          <th>許認可番号</th>
+          <td>【建設業許可】東京都知事許可 第0000号<br>
+            【一級建築士事務所登録】 東京都知事登録 第0-0000号<br>
+            【宅地建物取引業免許】 東京都知事（2）第0000号</td>
+        </tr>
+        <tr>
+          <th>主な取引銀行</th>
+          <td>日本星野銀行、東京星野銀行、星野スマイル銀行</td>
+        </tr>
+        <tr>
+          <th>従業員数</th>
+          <td>2名</td>
+        </tr>
+      </table>
+
+    </div>
+
+
+    <div class="effect">
+
+      <%# GooglemapAPI使用 %>
+      <h3>アクセスマップ</h3>
+
+      <style>
+        #map {
+          height: 600px;
+          width: 600px
+        }
+      </style>
+
+      <script>
+        let map
+
+        function inimtMap() {
+          geocoder = new google.maps.Geocoder()
+
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+              lat: 40.7828,
+              lng: -73.9653
+            },
+            zoom: 12,
+          });
+
+          marker = new google.maps.Marker({
+            position: {
+              lat: 40.7828,
+              lng: -73.9653
+            },
+            map: map
+          });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+      <style>
+        #map {
+          height: 600px;
+          width: 600px;
+        }
+      </style>
+
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    </div>
+
+
+  </div>
+  <!--/cont_wrap-->
+
 </div>
-
-<div class="effect d_02">
-<h3>会社概要</h3>
-
-<table class="table_01">
-  <tr>
-    <th>商　号</th>
-    <td>星野工務店（サンプル社名）</td>
-  </tr>
-  <tr>
-    <th>設　立</th>
-    <td>2021年（令和3年）5月5日</td>
-  </tr>
-  <tr>
-    <th>本　社</th>
-    <td>〒212-0012<br />
-神奈川県川崎市幸区4-46  アーク2マンション 201<br />
-TEL.044-280-6437</td>
-  </tr>
-  <tr>
-    <th>代表執行役</th>
-    <td>社長 兼 CEO　星野 一郎 （ほしの いちろう）<br>
-専務 CFO　星野 次郎 （ほしの じろう）</td>
-  </tr>
-  <tr>
-    <th>資本金</th>
-    <td>１２，３４５億円（２０１８年３月３１日現在）</td>
-  </tr>
-  <tr>
-    <th>業務内容</th>
-    <td>建設一式工事、土木一式工事、不動産取引</td>
-  </tr>
-  <tr>
-    <th>許認可番号</th>
-    <td>【建設業許可】東京都知事許可 第0000号<br>
-【一級建築士事務所登録】 東京都知事登録 第0-0000号<br>
-【宅地建物取引業免許】 東京都知事（2）第0000号</td>
-  </tr>
-  <tr>
-    <th>主な取引銀行</th>
-    <td>日本星野銀行、東京星野銀行、星野スマイル銀行</td>
-  </tr>
-  <tr>
-    <th>従業員数</th>
-    <td>2名</td>
-  </tr>
-</table>
-
-</div>
-
-
-<div class="effect">
-
-<%# GooglemapAPI使用 %>
-<h3>アクセスマップ</h3>
-
-<style>
-#map {
-  height: 600px;
-  width: 600px
-}
-</style>
-
-<script>
-let map
-
-function inimtMap() {
-  geocoder = new google.maps.Geocoder()
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.7828, lng:-73.9653},
-    zoom: 12,
-});
-
-marker = new google.maps.Marker({
-    position:  {lat: 40.7828, lng:-73.9653},
-    map: map
-  });
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-
-<style>#map {height: 600px;width: 600px;}</style>
-
-
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-
-</div>
-
-
-</div><!--/cont_wrap-->
-
-</div><!--/content-->
+<!--/content-->
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="js/jquery.inview.min.js"></script>
 <script src="js/script.js"></script>
-
-</html>
