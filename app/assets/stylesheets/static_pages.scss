@@ -1810,7 +1810,7 @@ body.fixed {
 メニューシャドウ
 -------------------------------------------*/
 .bg_bl {
-	background-color: #000;
+	// background-color: #000;
 	height: 100%;
 	width: 100%;
 	opacity: 0.80;
@@ -2054,6 +2054,7 @@ textarea {
 エフェクト
 -------------------------------------------*/
 .effect {
+	// opacity: 0;
 	filter: alpha(opacity=0);
 	-ms-filter: "alpha( opacity=0 )";
 	transform: translateY(20px);
