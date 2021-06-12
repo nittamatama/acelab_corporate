@@ -1,31 +1,155 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AcelabCorporate</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
-  </head>
+<head>
+  <title><%= yield(:title) %>歯科技工所をお探しなら神奈川県川崎市にあるAcelabまで</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
-  <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><%= link_to 'ACEラボ', '/', method: :get %></h1>
-        <% if admin_signed_in? %>
-          <div class="user_nav grid-6">
-            <%= button_to "ログアウト", destroy_admin_session_path, method: :delete %>
-            <a class="post" href="/posts/new">投稿する</a>
+  <meta name="keywords" content="">
+  <meta name="description" content="神奈川県川崎市にある歯科技工所ACEラボの会社概要ページです。" />
+
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <div class="bg_bl"></div>
+    <%= link_to image_tag("logo.png"), "/", alt: "歯科技工所ACEラボのロゴ"%>
+
+    <a class="menu_btn">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+    </a>
+
+    <div class="h_btn"><a href="contact.html"><i class="fas fa-envelope"></i>
+        <span>お問合わせ</span></a>
+    </div>
+
+    <div class="h_tel font_mincho"><a href="tel:"><i class="fas fa-phone"></i>
+        <span><strong>044-280-6437</strong></span></a>
+    </div>
+
+    <nav id="g_navi">
+      <ul class="navi_base">
+        <li><%= link_to 'HOME','/' %></li>
+        <li><a class="ac_menu">歯科技工物製作について</a>
+          <div class="ac_list">
+            <ul>
+              <li><a href="#">コンセプト</a></li>
+              <li><a href="task.html">業務内容</a></li>
+              <li><a href="#">歯科技工物製作の流れ</a></li>
+              <li><a href="sample.html">歯科技工コラム</a></li>
+            </ul>
           </div>
-        <% else %>
-          <div class="user_nav grid-6">
-            <%= link_to "ログイン", new_admin_session_path, class: "post" %>
-            <%= link_to "新規登録", new_admin_registration_path, class: "post" %>
+        </li>
+
+        <li><a class="ac_menu">技工製品・実績</a>
+          <div class="ac_list"></div>
+        </li>
+
+        <li><a href="faq.html">FAQ</a></li>
+
+        <li><a class="ac_menu">会社案内</a>
+          <div class="ac_list">
+            <ul>
+              <li><%= link_to '会社概要', ' /static_pages/company' %></li>
+              <li><a href="#">企業理念</a></li>
+              <li><a href="staff.html">社員紹介</a></li>
+              <li><a href="#">アクセス</a></li>
+            </ul>
           </div>
-        <% end %>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="h_sns">
+      <li><a href="#"><i class="fas fa-book"></i></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+      <li><a href="https://www.instagram.com/acelab_2021/"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </header>
+
+  <%= yield %>
+
+  <div class="box_contact effect">
+    <div class="arrow_tbm"><%= image_tag "sankaku.png" %> </div>
+    <div class="box_in clfix">
+      <div class="btn"><a href="#"><i class="fas fa-envelope"></i>ご注文・お問い合わせはコチラ</a>
+        <p>メールでのお問い合わせは<strong>24時間365日受付中！</strong></p>
       </div>
-    </header>
-    <%= yield %>
-  </body>
+      <div class="tel"><a href="tel:"><i class="fas fa-phone"></i><strong>044-280-6437</strong></a>
+        <p>電話対応時間：11：00~15：00 / 17:30~23:00</p>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <ul class="f_bn">
+      <li><a href="#"><i class="fas fa-book"></i>
+          <span>Blog</span></a></li>
+      <li><a href="#"><i class="fab fa-twitter"></i>
+          <span>Twitter</span></a></li>
+      <li><a href="#"><i class="fab fa-facebook-square"></i>
+          <span>Facebook</span></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i>
+          <span>Instagram</span></a></li>
+    </ul>
+
+    <div class="cont_wrap">
+      <ul class="f_list">
+        <li class="list_top"><%= link_to 'HOME','/' %></li>
+        <li class="list_top"><a href="#">歯科技工物について</a>
+          <ul>
+            <li><a href="sample.html">汎用ページ（サンプル）</a></li>
+            <li><a href="#">コンセプト</a></li>
+            <li><a href="#">業務内容</a></li>
+            <li><a href="#">歯科技工物制作の流れ</a></li>
+            <li><a href="#">歯科技工コラム</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="f_list">
+        <li class="list_top"><a href="#">施工実績</a></li>
+      </ul>
+
+      <ul class="f_list">
+        <li class="list_top"><a href="faq.html">FAQ</a></li>
+        <li class="list_top"><a href="#">会社案内</a>
+          <ul>
+            <li><%= link_to '会社概要','/static_pages/company' %></li>
+            <li><a href="#">企業理念</a></li>
+            <li><a href="staff.html">社員紹介</a></li>
+            <li><a href="#">アクセス</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <address>
+      Copyright (C) MegaPx. All Rights Reserved.
+    </address>
+
+  </footer>
+
+  <div class="to_top"><a href="#" title="トップへ戻る">
+      <i class="fas fa-chevron-up"></i></a>
+  </div>
+
+</body>
+
 </html>

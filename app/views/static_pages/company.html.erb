@@ -1,0 +1,98 @@
+<% provide(:title,'会社概要 |')%>
+
+<div id="sub_top" class="company">
+  Company Profile
+</div>
+
+<div class="pankuzu">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
+    <li>会社概要</li>
+  </ul>
+</div>
+
+<div class="content">
+  <h2 class="effect">会社概要<br>
+    <span>ACEラボの会社概要になります</span></h2>
+  <div class="cont_wrap">
+
+    <div class="effect">
+      <h3>代表あいさつ</h3>
+      <%= image_tag 'aoki-min.jpg', alt: "歯科技工士青木勇真の正面写真", class: "img_right" %>
+      <p>代表あいさつ文言を入れる箇所</p>
+    </div>
+
+    <div class="effect d_02">
+      <h3>会社概要</h3>
+
+      <table class="table_01">
+        <tr>
+          <th>商　号</th>
+          <td>ACEラボ</td>
+        </tr>
+        <tr>
+          <th>設　立</th>
+          <td>2021年（令和3年）5月5日</td>
+        </tr>
+        <tr>
+          <th>本　社</th>
+          <td>〒212-0012<br />
+            神奈川県川崎市幸区4-46 アーク2マンション 201<br />
+            TEL.044-280-6437</td>
+        </tr>
+        <tr>
+          <th>代表執行役</th>
+          <td><br>
+          </td>
+        </tr>
+        <tr>
+          <th>資本金</th>
+          <td>１２，３４５億円（２０１８年３月３１日現在）</td>
+        </tr>
+        <tr>
+          <th>業務内容</th>
+          <td>歯科技工物制作</td>
+        </tr>
+        <tr>
+          <th>許認可番号</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>主な取引銀行</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>従業員数</th>
+          <td>2名</td>
+        </tr>
+      </table>
+
+    </div>
+
+
+    <div class="effect">
+      <a id="access"></a>
+      <%# GooglemapAPI使用予定 %>
+      <h3>アクセスマップ</h3>
+      <div class="g_map_base">
+        <div class="g_map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12987.487091081664!2d139.6920448!3d35.5321663!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9f97f44a4b0c18!2zQUNF44Op44Oc!5e0!3m2!1sja!2sjp!4v1623027481269!5m2!1sja!2sjp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>" frameborder="0"
+          style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!--/cont_wrap-->
+
+</div>
+<!--/content-->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/jquery.inview.min.js"></script>
+<script src="js/script.js"></script>
