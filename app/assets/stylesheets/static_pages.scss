@@ -466,7 +466,6 @@ header .h_tel a i {
 }
 
 .img_left {
-	float: left;
 	padding-right: 30px;
 	padding-left: 30px;
 	padding-bottom: 20px;
@@ -2067,6 +2066,7 @@ textarea {
 .effect.d_02 {
 transition-delay:0.2s;
 -webkit-transition-delay:0.2s;
+text-align: center;
 }
 .effect.d_04 {
 transition-delay:0.4s;
