@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
 
   def employee
   end
+
+  def task
+  end
+  
 end
