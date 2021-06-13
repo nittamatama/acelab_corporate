@@ -64,10 +64,10 @@
         <li><a class="ac_menu">会社案内</a>
           <div class="ac_list">
             <ul>
-              <li><%= link_to '会社概要', ' /static_pages/company' %></li>
+              <li><%= link_to '会社概要', '/static_pages/company' %></li>
               <li><a href="#">企業理念</a></li>
               <li><%= link_to '社員紹介', '/static_pages/employee' %></li>
-              <li><a href="#">アクセス</a></li>
+              <li><%= link_to 'アクセスマップ', static_pages_company_path(anchor: 'access') %></li>
             </ul>
           </div>
         </li>
@@ -134,7 +134,7 @@
             <li><%= link_to '会社概要','/static_pages/company' %></li>
             <li><a href="#">企業理念</a></li>
             <li><%=link_to '社員紹介', '/static_pages/employee'%></li>
-            <li><a href="#">アクセス</a></li>
+            <li><%= link_to 'アクセスマップ', static_pages_company_path(anchor: 'access') %></li>
           </ul>
         </li>
       </ul>

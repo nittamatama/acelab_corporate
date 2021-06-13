@@ -7,5 +7,8 @@ class StaticPagesController < ApplicationController
 
   def task
   end
+
+  def faq
+  end
   
 end
