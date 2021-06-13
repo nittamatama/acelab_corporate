@@ -10,5 +10,8 @@ class StaticPagesController < ApplicationController
 
   def faq
   end
+
+  def product_achivement
+  end
   
 end

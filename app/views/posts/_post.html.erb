@@ -1,10 +1,9 @@
-<div class="post">
-  <%= link_to image_tag(post.image, class: :post__img ), post_path(post.id), method: :get %>
-  <div class="post__body">
-    <%= link_to post.title, post_path(post.id), method: :get, class: :post__title%>
-    ↓はタグ
-    <% post.tags.each do |tag| %>
-      <%= tag.tag_name%>
-    <% end %>
-  </div>
-</div>
+<%# <div class="post"> %>
+<%# <%= link_to image_tag(post.image, class: :post__img ), post_path(post.id), method: :get %>
+<%# <div class="post__body"> %>
+<%# <%= link_to post.title, post_path(post.id), method: :get, class: :post__title%>
+<%# <% post.tags.each do |tag| %>
+<%# <%= tag.tag_name%>
+<%# <% end %>
+<%# </div> %>
+<%# </div> %>
