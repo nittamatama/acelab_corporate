@@ -84,6 +84,12 @@ table td {
   visibility:hidden;
 }
 
+hr {
+	height: 3px;
+	background-color: black;
+	width: 100%;
+	border: none;
+}
 
 /*
 ローダー------------------*/
@@ -367,6 +373,8 @@ header .h_tel a i {
 	font-weight: normal;
 }
 
+
+
 .content h3 {
 	font-size: 22px;
 	line-height: 30px;
@@ -466,7 +474,6 @@ header .h_tel a i {
 }
 
 .img_left {
-	float: left;
 	padding-right: 30px;
 	padding-left: 30px;
 	padding-bottom: 20px;
@@ -2057,8 +2064,8 @@ textarea {
 	// opacity: 0;
 	filter: alpha(opacity=0);
 	-ms-filter: "alpha( opacity=0 )";
-	transform: translateY(20px);
-	-webkit-transform: translateY(20px);  
+	// transform: translateY(20px);
+	// -webkit-transform: translateY(20px);  
     -moz-transform: translateY(20px); 
 	-webkit-transition: 1.0s ease-out;
 	-moz-transition: 1.0s ease-out;
@@ -2067,6 +2074,7 @@ textarea {
 .effect.d_02 {
 transition-delay:0.2s;
 -webkit-transition-delay:0.2s;
+text-align: center;
 }
 .effect.d_04 {
 transition-delay:0.4s;
