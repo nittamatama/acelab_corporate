@@ -1,3 +1,19 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+  $(function () {
+    var loader = $('.loader-wrap');
+
+    $(window).on('load', function () {
+      loader.fadeOut();
+    });
+
+    setTimeout(function () {
+      loader.fadeOut();
+    }, 10000);
+  });
+</script>
+
 <div class="slider-pro" id="top_slide">
 
   <!-- ここに企業理念のようなキャッチコピーを載せたい -->
@@ -115,6 +131,33 @@
 
 </div>
 <!--/content-->
+
+<script src="js/jquery.sliderPro.min.js"></script>
+<script src="js/jquery.inview.min.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+  $(document).ready(function ($) {
+    $('#top_slide').sliderPro({
+      width: 1400,
+      arrows: true,
+      buttons: true,
+      aspectRatio: 1.8,
+      slideDistance: 0,
+      fadeDuration: 1000,
+      smallSize: 640,
+      visibleSize: "100%",
+      breakpoints: {
+        640: {
+          width: '100%',
+          arrows: false,
+          aspectRatio: 1.6,
+        }
+      }
+    });
+  });
+</script>
+
 
 
 
