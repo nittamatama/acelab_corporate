@@ -27,72 +27,71 @@
       <!-- <div class="top_catch">
       <span>受け継がれる色鮮やかな吊るし飾り</span></div> -->
       <!-- <div class="slide_btn"><a href="#">詳しくはコチラ</a></div> -->
-      <%= image_tag 'main.png'%>
+      <%= image_tag 'main.png', alt:"エースラボのトップロゴ", class: "sp-image"%>
     </div><!-- /sp-slide -->
 
     <div class="sp-slide">
       <!-- <div class="top_catch"> -->
       <!-- <span>ここに伝えたいメッセージを入れる</span></div> -->
       <!-- <div class="slide_btn"><a href="#">詳しくはコチラ</a></div> -->
-      <%= image_tag 'content1.png' %>
+      <%= image_tag 'content1.png', alt:"エースラボのコンセプト", class: "sp-image" %>
     </div><!-- /sp-slide -->
 
   </div><!-- /sp-slides -->
 </div><!-- /slider-pro -->
 
-<>
-  <div class="pickup">
-    <ul>
-      <li class="effect"><%= link_to image_tag( 'jirukosample.png'), "/", alt:"ジルコニアのサンプル画像"%><span
-          class="pu_icon">NEW!</span>
-        <div class="pu_title">この部分にコラムを表示させたい</div>
-        <p>この部分にコラムを表示させたい</p>
-        </a>
-      </li>
+<div class="pickup">
+  <ul>
+    <li class="effect"><%= link_to image_tag( 'jirukosample.png'), "/", alt:"ジルコニアのサンプル画像", class: "pu_icon" %><span>
+        NEW!</span>
+      <div class="pu_title">この部分にコラムを表示させたい</div>
+      <p>この部分にコラムを表示させたい</p>
+      </a>
+    </li>
 
-      <li class="effect"><a href="#"><img src="img/slide/img_06_sp.jpg" alt="サンプル画像"><span
-            class="pu_icon cl_02">イチオシ</span>
-          <div class="pu_title">最新イベント情報</div>
-          <p>最新のイベント情報を随時更新中です。詳しくはこちらからご覧ください。</p>
-        </a></li>
+    <li class="effect"><a href="#"><img src="img/slide/img_06_sp.jpg" alt="サンプル画像"><span
+          class="pu_icon cl_02">イチオシ</span>
+        <div class="pu_title">最新イベント情報</div>
+        <p>最新のイベント情報を随時更新中です。詳しくはこちらからご覧ください。</p>
+      </a></li>
 
-      <li class="effect"><a href="#"><img src="img/slide/img_05_sp.jpg" alt="サンプル画像">
-          <div class="pu_title">最新イベント情報</div>
-          <p>最新のイベント情報を随時更新中です。詳しくはこちらからご覧ください。</p>
-        </a></li>
+    <li class="effect"><a href="#"><img src="img/slide/img_05_sp.jpg" alt="サンプル画像">
+        <div class="pu_title">最新イベント情報</div>
+        <p>最新のイベント情報を随時更新中です。詳しくはこちらからご覧ください。</p>
+      </a></li>
 
-      <li class="effect"><a href="#"><img src="img/slide/img_04_sp.jpg" alt="サンプル画像">
-          <div class="pu_title">最新イベント情報</div>
-          <p>最新のイベント情報を随時更新中です。詳しくはこちらからご覧ください。</p>
-        </a></li>
+    <li class="effect"><a href="#"><img src="img/slide/img_04_sp.jpg" alt="サンプル画像">
+        <div class="pu_title">最新イベント情報</div>
+        <p>最新のイベント情報を随時更新中です。詳しくはこちらからご覧ください。</p>
+      </a></li>
 
+  </ul>
+</div><!-- /pickup -->
+
+
+
+<div class="content">
+
+  <div class="cont_wrap effect d_04">
+
+    <h2>お知らせ<br>
+      <span>News</span></h2>
+
+    <ul class="ul_news">
+      <li><span class="news_date">2020.11.01</span><span class="news_icon cl_02">EVENT</span><a
+          href="#">2019年・冬のイベント情報</a>を追加いたしました。</li>
+      <li><span class="news_date">2020.10.01</span><span class="news_icon">WORKS</span><a
+          href="#">東京都○○区A様の施工事例</a>を追加いたしました。</li>
+      <li><span class="news_date">2020.09.01</span>ホームページをリニューアルいたしました。</li>
     </ul>
-  </div><!-- /pickup -->
-
-
-
-  <div class="content">
-
-    <div class="cont_wrap effect d_04">
-
-      <h2>お知らせ<br>
-        <span>News</span></h2>
-
-      <ul class="ul_news">
-        <li><span class="news_date">2020.11.01</span><span class="news_icon cl_02">EVENT</span><a
-            href="#">2019年・冬のイベント情報</a>を追加いたしました。</li>
-        <li><span class="news_date">2020.10.01</span><span class="news_icon">WORKS</span><a
-            href="#">東京都○○区A様の施工事例</a>を追加いたしました。</li>
-        <li><span class="news_date">2020.09.01</span>ホームページをリニューアルいたしました。</li>
-      </ul>
-
-    </div>
-    <!--/cont_wrap-->
 
   </div>
-  <!--/content-->
+  <!--/cont_wrap-->
 
-  <%# <script src="js/jquery.sliderPro.min.js"></script>
+</div>
+<!--/content-->
+
+<%# <script src="js/jquery.sliderPro.min.js"></script>
 <script src="js/jquery.inview.min.js"></script>
 <script src="js/script.js"></script> %>
 
@@ -101,10 +100,10 @@
 
 
 
-  <%# <main class="main">
+<%# <main class="main">
   <div class="inner">
     <div class="post__wrapper">
       <%= render partial: 'post', collection: @posts %>
-  <%# </div>
+<%# </div>
   </div>
 </main> %>
