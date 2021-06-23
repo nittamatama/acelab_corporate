@@ -1,3 +1,6 @@
+# 技術はまだまだですが、めっちゃ調べてます
+
+
 # アプリケーション名
 ACEラボ コーポレートサイト
 
@@ -9,7 +12,7 @@ https://cacoo.com/diagrams/rCQHArOtyQLEr1DA/EB7CA
 https://cacoo.com/diagrams/rCQHArOtyQLEr1DA/2A63E
 
 ## URL
-デプロイ完了次第公開予定
+https://acelabo-corporate.herokuapp.com/
 
 ## テスト用アカウント
 Basic認証を後日導入後記載
