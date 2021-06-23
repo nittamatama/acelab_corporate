@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'static_pages/product_achivement', to: 'static_pages#product_achivement'
   
   devise_for :admins
-  root to: 'posts#index'
+  root to: 'static_pages#index'
   resources :posts do
     resources :likes, only: [:create, :destroy]
   end
