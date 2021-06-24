@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   devise_for :admins
   root to: 'static_pages#index'
-  resources :posts, only: :index do
+  resources :posts, only: [:index, :new]  do
     resources :likes, only: [:create, :destroy]
   end
 end

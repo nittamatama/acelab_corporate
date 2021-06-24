@@ -2,7 +2,7 @@
   <div class="top_base cl_01">
     <!--背景画像うすい時用　赤系-->
   </div>
-  <span>Works</span>
+  <span>Column</span>
 </div>
 
 <div class="pankuzu">
@@ -13,68 +13,23 @@
 </div>
 
 <div class="content">
-  <h2 class="effect">施工実績<br>
-    <span>施工実績のサンプルになります</span></h2>
+  <h2 class="effect">歯科技工コラム一覧<br>
+    <span>コラム</span></h2>
   <div class="cont_wrap">
 
     <div class="effect d_02">
 
       <ul class="works_list">
-        <li><span class="works_icon">NEW!</span><a href="img/slide/img_01.jpg" data-fancybox="works_list"
-            data-caption="拡大時に表示されるキャプション"><span class="mask"><img src="img/sample_001.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
+        <% @posts.each do |post| %>
+        <li><span
+            class="works_icon">NEW!</span><%= link_to image_tag(post.image, class: :mask), post_path(post.id), method: :get %>
+          <span>施工実績タイトル</span>
+        </li>
         <li><span class="works_icon">NEW!</span><a href="img/slide/img_02.jpg" data-fancybox="works_list"
             data-caption="拡大時に表示されるキャプション"><span class="mask"><img src="img/sample_002.jpg" alt="サムネール画像"></span>
             <span>施工実績タイトル</span></a></li>
-        <li><span class="works_icon">NEW!</span><a href="img/slide/img_03.jpg" data-fancybox="works_list"
-            data-caption="拡大時に表示されるキャプション"><span class="mask"><img src="img/sample_003.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_04.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_004.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_05.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_005.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_06.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_006.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_01.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_001.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_02.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_002.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_03.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_003.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_04.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_004.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_05.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_005.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_06.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_006.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_01.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_001.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_02.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_002.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_03.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_003.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_04.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_004.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_05.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_005.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
-        <li><a href="img/slide/img_06.jpg" data-fancybox="works_list" data-caption="拡大時に表示されるキャプション"><span
-              class="mask"><img src="img/sample_006.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
       </ul>
+      <% end %>
 
     </div>
 
