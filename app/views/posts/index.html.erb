@@ -21,13 +21,13 @@
 
       <ul class="works_list">
         <% @posts.each do |post| %>
-        <li><span
-            class="works_icon">NEW!</span><%= link_to image_tag(post.image, class: :mask), post_path(post.id), method: :get %>
-          <span>施工実績タイトル</span>
+        <li><span class="works_icon">NEW!</span>
+          <%= link_to image_tag(post.image, class: :mask), posts_path(post.id), method: :get %>
+          <span><%= link_to post.title, posts_path(post.id), method: :get %></span>
+          <% post.tags.each do |tag| %>
+          <%= tag.tag_name %>
+          <% end %>
         </li>
-        <li><span class="works_icon">NEW!</span><a href="img/slide/img_02.jpg" data-fancybox="works_list"
-            data-caption="拡大時に表示されるキャプション"><span class="mask"><img src="img/sample_002.jpg" alt="サムネール画像"></span>
-            <span>施工実績タイトル</span></a></li>
       </ul>
       <% end %>
 
