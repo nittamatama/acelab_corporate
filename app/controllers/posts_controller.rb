@@ -8,6 +8,8 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  
+  def search
+    @posts = Post.search(params[:keyword])
+  end
 
 end
