@@ -13,4 +13,12 @@ class Post < ApplicationRecord
       self.tags << post_tag
     end
   end
+
+  def self.search(search)
+    if search != ""
+      Post.where('title LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
