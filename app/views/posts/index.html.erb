@@ -28,12 +28,14 @@
         <li><span class="works_icon">NEW!</span>
           <%= link_to image_tag(post.image, class: :mask), posts_path(post.id), method: :get %>
           <span><%= link_to post.title, posts_path(post.id), method: :get %></span>
+          <%# <%= post.admin.first_name.last_name %>
           <% post.tags.each do |tag| %>
           <%= tag.tag_name %>
           <% end %>
         </li>
+        <% end %>
       </ul>
-      <% end %>
+
 
     </div>
 
