@@ -1,6 +1,48 @@
-<%# <script src="js/jquery.sliderPro.min.js"></script>
-<script src="js/jquery.inview.min.js"></script>
-<script src="js/script.js"></script> %>
+<div id="sub_top" class="works">
+  <div class="top_base cl_01">
+    <!--背景画像うすい時用 赤系-->
+  </div>
+  <span>Column</span>
+</div>
+
+<div class="pankuzu">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
+    <li>施工実績</li>
+  </ul>
+</div>
+
+<div class="content">
+  <h2 class="effect">歯科技工コラム一覧<br>
+    <span>コラム</span></h2>
+  <div class="cont_wrap">
+
+    <div class="effect d_02">
+      <%= form_with(url: posts_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "記事タイトルやジャンルで検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+
+      <ul class="works_list">
+        <% @posts.each do |post| %>
+        <li><span class="works_icon">NEW!</span>
+          <%= link_to image_tag(post.image, class: :mask), posts_path(post.id) %>
+          <span><%= link_to post.title, posts_path(post.id), method: :get %></span>
+          <%# <%= post.admin.first_name %>
+          <%= l post.created_at, format: :short %>
+          <% post.tags.each do |tag| %>
+          <%= tag.tag_name %>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+  <!--/cont_wrap-->
+
+</div>
+<!--/content-->
 
 
 
