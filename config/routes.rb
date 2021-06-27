@@ -10,8 +10,5 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   resources :posts, only: [:index, :new]  do
     resources :likes, only: [:create, :destroy]
-    collection do
-      get 'search'
-    end
   end
 end
