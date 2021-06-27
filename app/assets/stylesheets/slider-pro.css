@@ -624,3 +624,8 @@
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
 }
+
+element.style {
+	width: auto;
+	height: 80px;
+}
