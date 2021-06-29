@@ -11,3 +11,5 @@ crumb :static_pages_faq do
   link "FAQ", static_pages_faq_path
   parent :root
 end
+
+crub
