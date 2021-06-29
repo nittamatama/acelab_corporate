@@ -1,12 +1,13 @@
 class CreateContacts < ActiveRecord::Migration[6.0]
   def change
     create_table :contacts do |t|
-      t.string :clinic_name
-      t.string :name
+      t.string :clinic_name, null: false
+      t.string :name, null: false
       t.string :kana_name
-      t.string :email
-      t.string :phone_number
+      t.string :email, null: false
+      t.string :phone_number, null: false
       t.string :address
+      t.text   :message
 
       t.timestamps
     end
