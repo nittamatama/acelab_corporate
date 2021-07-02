@@ -7,9 +7,11 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.contact_mail(@contact).deliver
+      flash[:success] = 'メールを送信しました'
       redirect_to new_contact_path
     else
-      redirect_to new_contact_path
+      flash[:danger] = 'メールの送信に失敗しました'
+      render :new
     end
   end
 
