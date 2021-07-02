@@ -19,7 +19,7 @@
       <p>下記フォームに必要事項をご入力いただき、送信してください。<br></p>
       <%= form_with(model: @contact, local: true, id: 'mail_form') do |f| %>
       <dl>
-        <dt>歯科医院・会社・<span>Your company name</span></dt>
+        <dt>歯科医院・会社名<span>Your dental clinic name</span></dt>
         <dd><%= f.text_field :clinic_name, id: "name_1", name: "name_1" %> </dd>
 
         <dt>お名前<span>Your Name</span></dt>
@@ -37,7 +37,7 @@
           <%= f.text_field :phone_number, id: "phone", name: "phone" %>
         </dd>
 
-        <dt>お問い合わせ種類<span>Inquiry Kind</span></dt>
+        <%# <dt>お問い合わせ種類<span>Inquiry Kind</span></dt>
         <dd class="required">
           <select id="kind" name="kind">
             <option value="">選択してください</option>
@@ -46,16 +46,16 @@
             <option value="ご意見・クレーム">ご意見・クレーム</option>
             <option value="その他お問い合わせ">その他お問い合わせ</option>
           </select>
-        </dd>
+        </dd> %>
 
         <dt>住所<span>Address</span></dt>
         <dd class="required">
-          <%= f.text_area :address, class: 'hoge', size: "30x10" %>
+          <%= f.text_area :address, class: 'hoge' %>
         </dd>
 
         <dt>お問い合わせ内容<span>Mail Contents</span></dt>
         <dd class="required">
-          <%= f.text_area :message, id: "mail_contents", name: "mail_contents", size: "50X30" %>
+          <%= f.text_area :message, id: "mail_contents", name: "mail_contents", size: "30x10" %>
         </dd>
 
         <dt>送信する<span>Send</span></dt>
