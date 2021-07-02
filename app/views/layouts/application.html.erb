@@ -33,8 +33,11 @@
       <span class="bottom"></span>
     </a>
 
-    <div class="h_btn"><a href="contact.html"><i class="fas fa-envelope"></i>
-        <span>お問合わせ</span></a>
+    <div class="h_btn">
+      <%= link_to new_contact_path do %>
+      <i class="fas fa-envelope"></i>
+      <span>お問合わせ</span>
+      <% end %>
     </div>
 
     <div class="h_tel font_mincho"><a href="tel:"><i class="fas fa-phone"></i>
@@ -78,7 +81,9 @@
       <li><a href="#"><i class="fas fa-book"></i></a></li>
       <li><a href="#"><i class="fab fa-twitter"></i></a></li>
       <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-      <li><a href="https://www.instagram.com/acelab_2021/"><i class="fab fa-instagram"></i></a></li>
+      <li><%= link_to "https://www.instagram.com/acelab_2021/" do %>
+        <i class="fab fa-instagram"></i></li>
+      <% end %>
     </ul>
   </header>
 
@@ -88,7 +93,10 @@
   <div class="box_contact effect">
     <div class="arrow_tbm"><%= image_tag "sankaku.png" %> </div>
     <div class="box_in clfix">
-      <div class="btn"><a href="#"><i class="fas fa-envelope"></i>ご注文・お問い合わせはコチラ</a>
+      <div class="btn">
+        <%= link_to new_contact_path do %>
+        <i class="fas fa-envelope"></i>ご注文・お問い合わせはコチラ
+        <% end %>
         <p>メールでのお問い合わせは<strong>24時間365日受付中！</strong></p>
       </div>
       <div class="tel"><a href="tel:"><i class="fas fa-phone"></i><strong>044-280-6437</strong></a>
@@ -106,8 +114,10 @@
           <span>Twitter</span></a></li>
       <li><a href="#"><i class="fab fa-facebook-square"></i>
           <span>Facebook</span></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i>
-          <span>Instagram</span></a></li>
+      <li><%= link_to 'https://www.instagram.com/acelab_2021/' do %>
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span></li>
+      <% end %>
     </ul>
 
     <div class="cont_wrap">
