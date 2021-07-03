@@ -20,21 +20,31 @@
       <p>下記フォームに必要事項をご入力いただき、送信してください。<br></p>
       <%= form_with(model: @contact, local: true, id: 'mail_form') do |f| %>
       <dl>
-        <dt>歯科医院・会社名<span>Your dental clinic name</span></dt>
-        <dd><%= f.text_field :clinic_name, id: "name_1" %> </dd>
+        <dt>歯科医院・会社名<span>Your Dental Clinic Name</span>
+          <span class="required">必須</span>
+        </dt>
+        <dd>
+          <%= f.text_field :clinic_name, id: "name_1" %>
+        </dd>
 
-        <dt>お名前<span>Your Name</span></dt>
-        <dd class="required">
+        <dt>お名前<span>Your Name</span>
+          <span class="required">必須</span>
+        </dt>
+        <dd>
           <%= f.text_field :name, id: "name_2" %>
         </dd>
 
-        <dt>メールアドレス<span>Mail Address</span></dt>
-        <dd class="required">
+        <dt>メールアドレス<span>Mail Address</span>
+          <span class="required">必須</span>
+        </dt>
+        <dd>
           <%= f.text_field :email, id: "mail_address" %>
         </dd>
 
-        <dt>電話番号<span>Phone Number</span></dt>
-        <dd class="required">
+        <dt>電話番号<span>Phone Number</span>
+          <span class="required">必須</span>
+        </dt>
+        <dd>
           <%= f.text_field :phone_number, id: "phone" %>
         </dd>
 
@@ -50,21 +60,18 @@
           </dd> %>
 
         <dt>住所<span>Address</span></dt>
-        <dd class="required">
-          <%= f.text_area :address %>
-        </dd>
+        <dd><%= f.text_area :address %></dd>
 
-        <dt>お問い合わせ内容<span>Mail Contents</span></dt>
-        <dd class="required">
+        <dt>お問い合わせ内容<span>Mail Contents</span>
+          <span class="required">必須</span>
+        </dt>
+        <dd>
           <%= f.text_area :message, id: "mail_contents", size: "30x10" %>
         </dd>
 
         <dt>送信する<span>Send</span></dt>
-        <dd class="required">
-          <%= f.submit %>
-        </dd>
-      </dl>
-      <% end %>
+        <dd><%= f.submit name:"mail_submit_button", value:"送信する", id:"mail_submit_button" %></dd>
+        <% end %>
 
     </div>
 

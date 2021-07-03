@@ -76,6 +76,8 @@ form#mail_form dl dt span.optional{
 	color : #ffffff;
 	padding : 3px 5px;
 	border-radius : 3px;
+	position: relative;
+	bottom: 33px;
 }
 form#mail_form dl dt span.required{
 	background-color: #DD3C3C;
