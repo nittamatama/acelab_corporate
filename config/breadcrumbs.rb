@@ -11,3 +11,8 @@ crumb :static_pages_faq do
   link "FAQ", static_pages_faq_path
   parent :root
 end
+
+crumb :new_contact do
+  link "お問い合わせ", new_contact_path
+  parent :root
+end
