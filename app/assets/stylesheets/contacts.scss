@@ -16,25 +16,14 @@ form#mail_form{
 	background : rgba(255, 255, 255, 0.3);
 	border : 1px solid #EEE;
 	border-radius : 7px;
-	margin-top: 10px;
-	margin-right: auto;
-	margin-bottom: 20px;
-	margin-left: auto;
-	padding-top: 20px;
-	padding-right: 0;
-	padding-bottom: 20px;
-	padding-left: 0;
-}
-form#mail_form dl{
+	margin: 10px auto 20px;
+	padding: 20px 0;
+	dl{
 	width : 90%;
 	max-width: 800px;
 	overflow : hidden;
-	margin-top: 0;
-	margin-right: auto;
-	margin-bottom: 0;
-	margin-left: auto;
-}
-form#mail_form dl dt{
+	margin: 0 auto;
+		dt{
 	clear : both;
 	width : 33%;
 	float : left;
@@ -45,8 +34,14 @@ form#mail_form dl dt{
 	padding-right: 2%;
 	padding-bottom: 15px;
 	padding-left: 8%;
-}
-form#mail_form dl dd{
+			span{
+	display : block;
+	font-size : 80%;
+	color : #648EB0;
+	line-height: 120%;
+				}
+			}
+		dd{
 	width : 47%;
 	float : right;
 	border-top : 1px solid #cccccc;
@@ -54,16 +49,12 @@ form#mail_form dl dd{
 	padding-right: 5%;
 	padding-bottom: 15px;
 	padding-left: 5%;
+  	}
+	}
 }
 form#mail_form dl dt:first-child,
 form#mail_form dl dt:first-child+dd{
 	border : none;
-}
-form#mail_form dl dt span{
-	display : block;
-	font-size : 80%;
-	color : #648EB0;
-	line-height: 120%;
 }
 
 /* -- for JavaScript ここから -------------------------------------------------------------------------------- */
