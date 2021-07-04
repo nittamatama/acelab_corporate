@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
  
   def index
-    @posts = Post.all.order("created_at DESC")
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword]).order("created_at DESC")
   end
 
   def new
