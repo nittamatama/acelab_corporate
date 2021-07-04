@@ -49,6 +49,4 @@ test:
 #
 production:
   <<: *default
-  database: acelab_corporate_production
-  username: acelab_corporate
-  password: <%= ENV['ACELAB_CORPORATE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
