@@ -4,6 +4,17 @@
 # アプリケーション名
 ACEラボ コーポレートサイト
 
+## サイトレイアウト
+<img width="1084" alt="スクリーンショット 2021-06-28 1 20 47" src="https://user-images.githubusercontent.com/76588745/123552055-5ded1800-d7af-11eb-811c-e6238027d335.png">
+
+
+## サイトマーケティング概要
+![marketing1](https://user-images.githubusercontent.com/76588745/123549997-4c534280-d7a6-11eb-9a82-f9303f2c1393.png)
+
+## 主要検索クエリ概要
+![marketing2](https://user-images.githubusercontent.com/76588745/123550854-63942f00-d7aa-11eb-8656-d23aa66cee19.png)
+
+
 ## アプリケーション概要
 ・5月に設立された株式会社ACEラボ様のコーポレートサイト兼オウンドメディアとして開発
 ・UI Flow図
