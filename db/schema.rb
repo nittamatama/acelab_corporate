@@ -54,7 +54,8 @@ ActiveRecord::Schema.define(version: 2021_06_29_002550) do
     t.string "email", null: false
     t.string "phone_number", null: false
     t.string "address"
-    t.text "message"
+    t.text "message", null: false
+    t.integer "inquiry_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

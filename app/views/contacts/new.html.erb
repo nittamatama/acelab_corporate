@@ -31,8 +31,11 @@
           <span class="required">必須</span>
         </dt>
         <dd>
-          <%= f.text_field :name, id: "name_2" %>
+          <%= f.text_field :name, id: "name_2", size: "50" %>
         </dd>
+
+        <dt>フリガナ</dt>
+        <dd><%= f.text_field :kana_name, id: "name_2" %></dd>
 
         <dt>メールアドレス<span>Mail Address</span>
           <span class="required">必須</span>
@@ -48,16 +51,12 @@
           <%= f.text_field :phone_number, id: "phone" %>
         </dd>
 
-        <%# <dt>お問い合わせ種類<span>Inquiry Kind</span></dt>
-          <dd class="required">
-            <select id="kind" name="kind">
-              <option value="">選択してください</option>
-              <option value="ご依頼・ご相談">ご依頼・ご相談</option>
-              <option value="廃墟について">廃墟について</option>
-              <option value="ご意見・クレーム">ご意見・クレーム</option>
-              <option value="その他お問い合わせ">その他お問い合わせ</option>
-            </select>
-          </dd> %>
+        <dt>お問い合わせ種類<span>Inquiry Kind</span>
+          <span class="required">必須</span>
+        </dt>
+        <dd>
+          <%= f.collection_select(:inquiry_id, Inquiry.all, :id, :name, {id: "kind"}) %>
+        </dd>
 
         <dt>住所<span>Address</span></dt>
         <dd><%= f.text_area :address %></dd>
@@ -66,7 +65,7 @@
           <span class="required">必須</span>
         </dt>
         <dd>
-          <%= f.text_area :message, id: "mail_contents", size: "30x10" %>
+          <%= f.text_area :message, id: "mail_contents" %>
         </dd>
 
         <dt>送信する<span>Send</span></dt>

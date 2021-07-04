@@ -122,8 +122,8 @@ form#mail_form input{
 	background : #fafafa;
 }
 form#mail_form textarea{
-	width : 320px;
-	height : 200px;
+	width : 250px;
+	height : 80px;
 	resize : vertical;
 	border : 1px solid #cccccc;
 	border-radius : 3px;
@@ -137,7 +137,7 @@ form#mail_form textarea:focus{
 }
 form#mail_form input#name_1,
 form#mail_form input#name_2{
-	width : 160px;
+	width : 210px;
 }
 form#mail_form input#read_1,
 form#mail_form input#read_2{
@@ -145,7 +145,7 @@ form#mail_form input#read_2{
 }
 form#mail_form input#mail_address,
 form#mail_form input#mail_address_confirm{
-	width : 250px;
+	width : 210px;
 }
 form#mail_form ul li{
 	list-style-type : none;
@@ -159,7 +159,7 @@ form#mail_form ul li input{
 	margin-right : 0.5em;
 }
 form#mail_form input#postal{
-	width : 100px;
+	width : 210px;
 }
 form#mail_form input#address_1,
 form#mail_form input#address_2{
@@ -168,7 +168,7 @@ form#mail_form input#address_2{
 	margin-bottom : 7px;
 }
 form#mail_form input#phone{
-	width : 100px;
+	width : 210px;
 }
 form#mail_form input#day{
 	width : 160px;
