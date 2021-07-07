@@ -1,3 +1,5 @@
+<% provide(:title, '歯科技工コラム一覧ページ |') %>
+
 <div id="sub_top" class="works">
   <div class="top_base cl_01">
   </div>
@@ -21,8 +23,8 @@
       <ul class="works_list">
         <% @posts.each do |post| %>
         <li><span class="works_icon">NEW!</span>
-          <%= link_to image_tag(post.image, class: :mask), posts_path(post.id) %>
-          <span><%= link_to post.title, posts_path(post.id), method: :get %></span>
+          <%= link_to image_tag(post.image, class: :mask), post_path(post.id) %>
+          <span><%= link_to post.title, post_path(post.id), method: :get %></span>
           <%# <%= post.admin.first_name %>
           <%= l post.created_at, format: :short %>
           <% post.tags.each do |tag| %>
