@@ -14,6 +14,11 @@
     <div class="posted_time">
       <%= l @post.created_at, format: :short %>
     </div>
+    <div class="tags">
+      <% @post.tags.each do |tag| %>
+      <%= tag.tag_name %>
+      <% end %>
+    </div>
 
     <div>
       <section>
