@@ -1,64 +1,60 @@
-<main class="main">
-  <div class="inner">
-    <div class="post__wrapper">
-      <p class="post__hedding">
-        <%= @post.title%>
-        <%= flash[:notice] %>
-      </p>
-      <%# <%= link_to "by#{@post.user.name}","/users/#{@post.user_id}", class: :post__user 投稿者の名前をクリックしたらユーザー紹介ページに飛ぶようにしておこう %>
-         <div class="post__manage">
-          <%# <% if user_signed_in? && current_user.id == @prototype.user_id %> 
-           <%= link_to "編集する", edit_post_path(@post), method: :get, class: :post__btn %> 
-           <%= link_to "削除する", post_path(@post), method: :delete, class: :post__btn %> 
-          <%# <% end %> 
-         </div>  
-      <div class="post__image">
-        <%= image_tag @post.image %>
-      </div>
-      <div class="post__body">
-        <div class="prototype__detail">
-          <p class="detail__title">記事内容</p>
-          <p class="detail__message">
-            <%= @post.text %>
-          </p>
-            <% if @post.likes.find_by(ip: request.remote_ip) %>
-              <%= button_to "いいね解除", post_like_path(@post), method: :delete %>
-            <% else %>
-              <%= button_to 'いいね', post_likes_path(@post) %>
-            <% end %>
-            <%= @likes_count %>
-            <% @post.tags.each do |tag| %>
-              <%= tag.tag_name %>
-            <% end %>
-          
-        </div>
-      </div>
-      <%# <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-        <%# <%if user_signed_in? %> 
-          <%# <%= form_with(model: [@prototype, @comment], local: true) do |f|%> 
-            <%# <div class="field"> %>
-              <%# <%= f.label :text, "コメント"<br />  %>
-              <%# <%= f.text_field :text %> 
-            <%# </div> %>
-            <%# <div class="actions"> %>
-              <%# <%= f.submit "送信する", class: :form__btn  %> 
-            <%# </div> %>
-          <%# <% end %>  
-        <%# <% end %> 
-        <%# // ログインしているユーザーには上記を表示する %>
-        <%# <ul class="comments_lists"> %>
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-          <%# <ol class="comments_list"> %>
-              <%# <% @comments.each do |comment|<li>  %>
-                <%# <%= comment.text %> 
-                <%# <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %> 
-               <%# </li> %>
-            <%# <% end %> 
-          <%# </ol> %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
-        <%# </ul> %>
-      <%# </div> %>
-    </div>
+<div id="sub_top" class="sample">
+  <div class="top_base cl_03">
+    <!--背景画像うすい時用　青系-->
   </div>
-</main>
+  <span>Sample page</span>
+</div>
+
+<article>
+  <div class="content">
+    <%= flash[:notice] %>
+    <h2 class="effect"><%= @post.title%><br></h2>
+    <div class="posted_time">
+      <%= l @post.created_at, format: :short %>
+    </div>
+    <div class="tags">
+      <% @post.tags.each do |tag| %>
+      <%= tag.tag_name %>
+      <% end %>
+    </div>
+
+    <section>
+      <div class="cont_wrap">
+
+        <div class="effect d_02">
+          <%= image_tag @post.image, alt:"投稿写真", class: "img_left" %>
+        </div>
+        <%= @post.text %>
+
+      </div>
+      <!--/cont_wrap-->
+    </section>
+  </div>
+</article>
+
+<% if @post.likes.find_by(ip: request.remote_ip) %>
+<%= button_to "いいね解除", post_like_path(@post), method: :delete %>
+<% else %>
+<%= button_to "いいね", post_likes_path(@post) %>
+<% end %>
+<% @likes_count %>
+
+<div class="container">
+  <%= form_with(model: [@post, @comment], local: true) do |form| %>
+  <%= form.text_field :user_name, placeholder: "ニックネームを入れてください"%>
+  <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+  <%= form.submit "送信" %>
+  <% end %>
+
+  <% if admin_signed_in? %>
+  <div class="comments">
+    <h3>コメント一覧</h3>
+    <% @comments.each do |comment| %>
+    <p>
+      <%= comment.user_name %>
+      <%= comment.text %>
+    </p>
+    <% end %>
+  </div>
+  <% end %>
+</div>
