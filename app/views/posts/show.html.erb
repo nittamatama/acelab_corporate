@@ -39,6 +39,12 @@
 <% end %>
 <% @likes_count %>
 
+<div class="comment">
+  <%= form_with(model: [@post, @comment], local: true) do |form| %>
+  <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+  <%= form.submit "送信" %>
+  <% end %>
+</div>
 
 
 
