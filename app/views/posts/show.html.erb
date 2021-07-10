@@ -41,15 +41,16 @@
 
 <div class="container">
   <%= form_with(model: [@post, @comment], local: true) do |form| %>
+  <%= form.text_field :user_name, placeholder: "ニックネームを入れてください"%>
   <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
   <%= form.submit "送信" %>
   <% end %>
 
   <div class="comments">
     <h3>コメント一覧</h3>
-    <%= @comments.each do |comment| %>
+    <% @comments.each do |comment| %>
     <p>
-      <strong><%= comment.admin.first_name %></strong>
+      <%= comment.user_name %>
       <%= comment.text %>
     </p>
     <% end %>
