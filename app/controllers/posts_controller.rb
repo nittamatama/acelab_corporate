@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    Post.create(post_params)
+  end
+
   def show
     @comment = Comment.new
     @comments = @post.comments
@@ -18,6 +22,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def post_params
+    params.require(:post).permit(:title, :text, :image, :content)
+  end
 
   def set_post
     @post = Post.find(params[:id])

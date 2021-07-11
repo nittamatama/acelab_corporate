@@ -6,8 +6,8 @@
 </div>
 
 <div class="content">
-  <h2 class="effect">管理者ログインページ<br>
-    <span>管理者のログインはこちらからお願いします</span></h2>
+  <h2 class="effect">コラム投稿ページ<br>
+    <span>コラムの投稿はこのページからお願いします</span></h2>
 
   <div class="cont_wrap">
     <%= form_with model: @post, local: true do |f| %>
@@ -20,6 +20,11 @@
       <%= f.label :tag_ids, "タグ"%>
       <%= f.text_field :tag_ids, placeholder: 'タグを入力してください' %>
       <%= f.collection_check_boxes :post_tags, Tag.all, :id, :tag_name %>
+    </div>
+
+    <div class='field'>
+      <%= f.label :content %>
+      <%= f.rich_text_area :content %>
     </div>
 
     <div class="field">
