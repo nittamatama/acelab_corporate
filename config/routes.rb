@@ -10,8 +10,9 @@ Rails.application.routes.draw do
        registrations: 'admins/registrations',
        sessions: 'admins/sessions'
 }
+
   root to: 'static_pages#index'
-  resources :posts, only: [:index, :new, :show] do
+  resources :posts, only: [:index, :new, :show, :create] do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: :create
   end
