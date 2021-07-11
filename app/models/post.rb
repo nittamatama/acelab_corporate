@@ -8,7 +8,6 @@ class Post < ApplicationRecord
   has_rich_text :content
 
   validates :title, presence: true
-  validates :text,  presence: true
   
   def save_tags(savepost_tags)
     savepost_tags.each do |new_name|
