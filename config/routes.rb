@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get 'static_pages/product_achivement', to: 'static_pages#product_achivement'
   get 'posts/index'
   
-  devise_for :admins
+  devise_for :admins, controllers: {
+       registrations: 'admins/registrations',
+       sessions: 'admins/sessions'
+}
   root to: 'static_pages#index'
   resources :posts, only: [:index, :new, :show] do
     resources :likes, only: [:create, :destroy]
