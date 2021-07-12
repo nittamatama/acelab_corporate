@@ -97,8 +97,10 @@ ActiveRecord::Schema.define(version: 2021_07_11_060135) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
+    t.bigint "admin_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_posts_on_admin_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -111,4 +113,5 @@ ActiveRecord::Schema.define(version: 2021_07_11_060135) do
   add_foreign_key "likes", "posts"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
+  add_foreign_key "posts", "admins"
 end
