@@ -1,23 +1,31 @@
-<div class="main">
-  <div class="inner">
-    <div class="form__wrapper">
-      <h2 class="page-heading">管理者ログイン</h2>
-        <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
-
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, autofocus: true, autocomplete: "current-password" %>
-        </div>
-
-        <div class="actions">
-          <%= f.submit "ログイン", class: :form__btn  %>
-        </div>
-      <% end %>
-    </div>
+<div id="sub_top" class="sample">
+  <div class="top_base cl_03">
+    <!--背景画像うすい時用　青系-->
   </div>
+  <span>Administrator Sign In</span>
 </div>
+
+<div class="content">
+  <h2 class="effect">管理者ログインページ<br>
+    <span>管理者のログインはこちらからお願いします</span></h2>
+
+  <div class="cont_wrap">
+    <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+    <div class="field">
+      <%= f.label :email, "メールアドレス" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, "パスワード（6文字以上）" %><br />
+      <%= f.password_field :password, autofocus: true, autocomplete: "current-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "ログイン" %>
+    </div>
+    <% end %>
+  </div>
+  <!--/cont_wrap-->
+</div>
+<!--/content-->

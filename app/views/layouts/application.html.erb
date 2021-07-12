@@ -125,17 +125,12 @@
         <li class="list_top"><%= link_to 'HOME','/' %></li>
         <li class="list_top"><a href="#">歯科技工物について</a>
           <ul>
-            <li><a href="sample.html">汎用ページ（サンプル）</a></li>
             <li><a href="#">コンセプト</a></li>
             <li><%= link_to '事業内容', '/static_pages/task' %></li>
             <li><a href="#">歯科技工物制作の流れ</a></li>
             <li><a href="#">歯科技工コラム</a></li>
           </ul>
         </li>
-      </ul>
-
-      <ul class="f_list">
-        <li class="list_top"><a href="#">施工実績</a></li>
       </ul>
 
       <ul class="f_list">
@@ -149,6 +144,11 @@
           </ul>
         </li>
       </ul>
+
+      <ul class="f_list">
+        <li class="list_top"><%= link_to '管理者ログイン', new_admin_session_path %></li>
+        <li class="list_top"><%= link_to '管理者登録', new_admin_registration_path %></li>
+      </ul>
     </div>
 
     <address>
@@ -157,8 +157,9 @@
 
   </footer>
 
-  <div class="to_top"><a href="#" title="トップへ戻る">
-      <i class="fas fa-chevron-up"></i></a>
+  <div class="to_top"><%= link_to '#' do %>
+    <i class="fas fa-chevron-up"></i>
+    <% end %>
   </div>
 
 </body>

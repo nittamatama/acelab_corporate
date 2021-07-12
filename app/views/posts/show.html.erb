@@ -2,7 +2,7 @@
   <div class="top_base cl_03">
     <!--背景画像うすい時用　青系-->
   </div>
-  <span>Sample page</span>
+  <span>Column</span>
 </div>
 
 <article>
@@ -20,24 +20,24 @@
 
     <section>
       <div class="cont_wrap">
-
         <div class="effect d_02">
           <%= image_tag @post.image, alt:"投稿写真", class: "img_left" %>
         </div>
-        <%= @post.text %>
-
+        <%= @post.content %>
       </div>
       <!--/cont_wrap-->
     </section>
   </div>
 </article>
 
-<% if @post.likes.find_by(ip: request.remote_ip) %>
-<%= button_to "いいね解除", post_like_path(@post), method: :delete %>
-<% else %>
-<%= button_to "いいね", post_likes_path(@post) %>
-<% end %>
-<% @likes_count %>
+<div class="like">
+  <% if @post.likes.find_by(ip: request.remote_ip) %>
+  <%= button_to "いいね解除", post_like_path(@post), method: :delete %>
+  <% else %>
+  <%= button_to "いいね", post_likes_path(@post) %>
+  <% end %>
+  <% @likes_count %>
+</div>
 
 <div class="container">
   <%= form_with(model: [@post, @comment], local: true) do |form| %>

@@ -16,3 +16,8 @@ crumb :new_contact do
   link "お問い合わせ", new_contact_path
   parent :root
 end
+
+crumb :about_company do
+  link "会社紹介", static_pages_company_path
+  parent :root
+end

@@ -1,8 +1,37 @@
-<div class="main">
-  <div class="inner">
-    <div class="form__wrapper">
-      <h2 class="page-heading">新規記事投稿</h2>
-        <%= render partial: 'form' , locals: { post: @post} %>
-    </div>
+<div id="sub_top" class="sample">
+  <div class="top_base cl_03">
+    <!--背景画像うすい時用　青系-->
   </div>
+  <span>Post Column</span>
 </div>
+
+<div class="content">
+  <h2 class="effect">コラム投稿ページ<br>
+    <span>コラムの投稿はこのページからお願いします</span></h2>
+
+  <div class="cont_wrap">
+    <%= form_with model: @post, local: true do |f| %>
+    <div class="field">
+      <%= f.label :title, "記事タイトル" %><br />
+      <%= f.text_field :title, placeholder: "タイトルを入力してください" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :tag_ids, "タグ"%>
+      <%= f.text_field :tag_ids, placeholder: 'タグを入力してください' %>
+      <%= f.collection_check_boxes :post_tags, Tag.all, :id, :tag_name %>
+    </div>
+
+    <div class='field'>
+      <%= f.label :content, "記事内容"%>
+      <%= f.rich_text_area :content %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "投稿する", class: :form__btn  %>
+    </div>
+    <% end %>
+  </div>
+  <!--/cont_wrap-->
+</div>
+<!--/content-->
