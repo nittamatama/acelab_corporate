@@ -74,6 +74,15 @@
             </ul>
           </div>
         </li>
+        <% if admin_signed_in? %>
+        <li>
+          <a class="ac_menu"><%= @admin.full_name %>
+        <li>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete%>
+        </li>
+        </div>
+        </li>
+        <% end %>
       </ul>
     </nav>
 

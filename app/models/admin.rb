@@ -7,4 +7,14 @@ class Admin < ApplicationRecord
   validates :first_name, presence: true
 
   has_many :posts
+
+  before_action :authenticate_admin!
+
+  
+
+  def full_name
+    @admin = current_admin.id
+    self.first_name + self.last_name
+  end
+  
 end
