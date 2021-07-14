@@ -7,7 +7,9 @@
 
 <div class="content">
   <h2 class="effect">管理者ログインページ<br>
-    <span>管理者のログインはこちらからお願いします</span></h2>
+    <span>管理者のログインはこちらからお願いします</span>
+  </h2>
+  <p class="alert"><%= alert %></p>
 
   <div class="cont_wrap">
     <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
