@@ -4,9 +4,20 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :first_name, presence: true
+         has_many :posts
+  
+         with_options presence: true do
+           validates :first_name, :last_name,
+             format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/, message: "を入力してください"}
+           validates :password,
+             format: { with: /\A[a-z0-9]+\z/i, message: "は半角英数字のみ登録可能です" }
+           validates :email, uniqueness: true,
+             format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "は半角英数字のみ登録可能です" }
+             
+         end
+          
 
-  has_many :posts
+  
 
 
   def full_name
