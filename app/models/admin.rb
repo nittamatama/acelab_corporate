@@ -8,13 +8,9 @@ class Admin < ApplicationRecord
 
   has_many :posts
 
-  before_action :authenticate_admin!
-
-  
 
   def full_name
-    @admin = current_admin.id
-    self.first_name + self.last_name
+    self.first_name + " " + self.last_name
   end
   
 end

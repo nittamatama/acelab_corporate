@@ -76,11 +76,15 @@
         </li>
         <% if admin_signed_in? %>
         <li>
-          <a class="ac_menu"><%= @admin.full_name %>
-        <li>
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete%>
-        </li>
-        </div>
+          <a class="ac_menu"><%= "ログイン:#{ current_admin.full_name}" %></a>
+          <div class="ac_list">
+            <ul>
+              <li>
+                <%= link_to 'コラム投稿', new_post_path %></li>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete%></li>
+            </ul>
+          </div>
         </li>
         <% end %>
       </ul>
