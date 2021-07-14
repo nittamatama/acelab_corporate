@@ -12,6 +12,7 @@
 
   <div class="cont_wrap">
     <%= form_with model: @admin, url: admin_registration_path, local: false do |f| %>
+    <%= render "devise/shared/error_messages", model: f.object %>
 
     <div class="field">
       <%= f.label :email, "メールアドレス" %><br />
