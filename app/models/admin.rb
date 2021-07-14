@@ -13,12 +13,7 @@ class Admin < ApplicationRecord
              format: { with: /\A[a-z0-9]+\z/i, message: "は半角英数字のみ登録可能です" }
            validates :email, uniqueness: true,
              format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "は半角英数字のみ登録可能です" }
-             
          end
-          
-
-  
-
 
   def full_name
     self.first_name + " " + self.last_name
