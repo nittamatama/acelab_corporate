@@ -3,3 +3,9 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%m/%d %H:%M"
+  activerecord:
+    attributes:
+      admin:
+        first_name: 名前
+        last_name: 苗字
+      
