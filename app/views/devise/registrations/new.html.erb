@@ -7,10 +7,12 @@
 
 <div class="content">
   <h2 class="effect">管理者登録ページ<br>
-    <span>新たな管理者の登録はこちらからお願いします</span></h2>
+    <span>新たな管理者の登録はこちらからお願いします</span>
+  </h2>
 
   <div class="cont_wrap">
-    <%= form_with model: @admin, url: admin_registration_path, local: false do |f| %>
+    <%= form_with model: @admin, url: admin_registration_path, local: true do |f| %>
+    <%= render "devise/shared/error_messages", model: f.object %>
 
     <div class="field">
       <%= f.label :email, "メールアドレス" %><br />

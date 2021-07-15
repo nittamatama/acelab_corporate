@@ -74,6 +74,19 @@
             </ul>
           </div>
         </li>
+        <% if admin_signed_in? %>
+        <li>
+          <a class="ac_menu"><%= "ログイン:#{ current_admin.full_name}" %></a>
+          <div class="ac_list">
+            <ul>
+              <li>
+                <%= link_to 'コラム投稿', new_post_path %></li>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete%></li>
+            </ul>
+          </div>
+        </li>
+        <% end %>
       </ul>
     </nav>
 
@@ -85,9 +98,13 @@
         <i class="fab fa-instagram"></i></li>
       <% end %>
     </ul>
+
+    <p class="notice"><%= notice %></p>
+
   </header>
 
   <%= breadcrumbs separator: " &rsaquo; " %>
+
   <%= yield %>
 
   <div class="box_contact effect">
@@ -146,8 +163,10 @@
       </ul>
 
       <ul class="f_list">
+        <% unless admin_signed_in? %>
         <li class="list_top"><%= link_to '管理者ログイン', new_admin_session_path %></li>
         <li class="list_top"><%= link_to '管理者登録', new_admin_registration_path %></li>
+        <% end %>
       </ul>
     </div>
 

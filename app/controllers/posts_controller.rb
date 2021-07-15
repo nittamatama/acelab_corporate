@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
+    current_admin.posts.create(post_params)
   end
 
   def show
