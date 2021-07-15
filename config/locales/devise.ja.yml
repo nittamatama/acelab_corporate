@@ -140,11 +140,5 @@ ja:
       not_locked: はロックされていません。
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
-        other: "%{count}件の入力エラーが発生したため新規登録はされませんでした。"
-    models:
-      admin:
-        attributes:
-            password: パスワード
-            blank: が空になっています
-            first_name: 名前
-            last_name: 苗字
+        other: "%{count}件の入力エラーが発生したため新規登録ができませんでした。"
+ 
