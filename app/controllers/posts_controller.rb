@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
+    current_admin.posts.create(post_params)
   end
 
   def show
@@ -24,7 +25,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content).merge(admin_id: current_admin.id)
+    params.require(:post).permit(:title, :content)
   end
 
   def set_post
