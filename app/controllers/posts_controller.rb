@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def create
     Post.create(post_params)
     current_admin.posts.create(post_params)
+    redirect_to posts_path
   end
 
   def show
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :image)
   end
 
   def set_post
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
 
   def move_to_index
     unless admin_signed_in?
-      redirect_to action: index
+      redirect_to action: :index
     end
   end
 
