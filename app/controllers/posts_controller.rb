@@ -12,7 +12,6 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
-    binding.pry
     current_admin.posts.create(post_params)
     redirect_to posts_path
   end

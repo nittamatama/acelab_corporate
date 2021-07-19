@@ -23,9 +23,9 @@ class Post < ApplicationRecord
     end
   end
 
-  def self.search(keryword)
-    if search != ""
-      Post.where('title LIKE(?)', "%#{search}%")
+  def self.search(keyword)
+    if keyword != ""
+      Post.where('title LIKE(?)', "%#{keyword}%")
     else
       Post.all
     end

@@ -24,6 +24,7 @@
         <% @posts.each do |post| %>
         <li><span class="works_icon">NEW!</span>
           <%  if post.image.attached? %>
+          <% binding.pry %>
           <%= link_to image_tag(post.image, class: 'mask'), post_path(post.id)%>
           <% else %>
           <%= link_to image_tag('logo.png', class: 'mask'), post_path(post.id)%>
