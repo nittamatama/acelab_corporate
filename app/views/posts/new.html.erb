@@ -16,8 +16,12 @@
       <%= f.text_field :title, placeholder: "タイトルを入力してください" %>
     </div>
 
+    <div class="field">サムネイル画像<br>
+      <%= f.file_field :image %>
+    </div>
+
     <div class="field">
-      <%= f.label :tag_ids, "タグ"%>
+      <%= f.label :tag_ids, 'タグ'%>
       <%= f.text_field :tag_ids, placeholder: 'タグを入力してください' %>
       <%= f.collection_check_boxes :post_tags, Tag.all, :id, :tag_name %>
     </div>
