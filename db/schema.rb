@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_07_11_060135) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_060135) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "admin_id"
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["admin_id"], name: "index_posts_on_admin_id"
