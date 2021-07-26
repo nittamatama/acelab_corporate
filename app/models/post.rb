@@ -15,7 +15,7 @@ class Post < ApplicationRecord
     validates :content
   end
 
-  validates :genre_id, numericality: { other_than: 1, message: "が空なので登録できません" }
+  validates :category_id, numericality: { other_than: 1, message: "が空なので登録できません" }
 
 
   

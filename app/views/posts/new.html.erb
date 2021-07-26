@@ -20,6 +20,11 @@
       <%= f.file_field :image %>
     </div>
 
+    <div class="field">カテゴリー選択<br>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+
+
     <div class="field">
       <%= f.label :tag_ids, 'タグ'%>
       <%= f.text_field :tag_ids, placeholder: 'タグを入力してください' %>
