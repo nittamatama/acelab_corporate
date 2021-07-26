@@ -9,7 +9,6 @@ class CreateContacts < ActiveRecord::Migration[6.0]
       t.string  :address
       t.text    :message      ,null: false
       t.integer :inquiry_id   ,null:false
-
       t.timestamps
     end
   end

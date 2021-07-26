@@ -23,9 +23,14 @@
       <ul class="works_list">
         <% @posts.each do |post| %>
         <li><span class="works_icon">NEW!</span>
-          <%= link_to image_tag(post.image, class: :mask), post_path(post.id) %>
+
+          <%  if post.image.attached? %>
+          <%= link_to image_tag(post.image, class: 'mask'), post_path(post.id)%>
+          <% else %>
+          <%= link_to image_tag('logo.png', class: 'mask'), post_path(post.id)%>
+          <% end %>
           <span><%= link_to post.title, post_path(post.id), method: :get %></span>
-          <%# <%= post.admin.first_name %>
+          <%= post.admin.full_name %>
           <%= l post.created_at, format: :short %>
           <% post.tags.each do |tag| %>
           <%= tag.tag_name %>

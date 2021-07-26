@@ -40,6 +40,8 @@
 	position: relative;
 	display: block;
 	border: none;
+	object-fit: scale-down;
+	
 }
 
 .sp-no-js {
