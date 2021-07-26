@@ -10,11 +10,12 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_rich_text :content
 
-
   with_options presence: true do
     validates :title
     validates :content
   end
+
+  validates :genre_id, numericality: { other_than: 1, message: "が空なので登録できません" }
 
 
   

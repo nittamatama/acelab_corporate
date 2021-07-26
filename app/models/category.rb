@@ -6,4 +6,8 @@ class Category < ActiveHash::Base
    { id: 4, name: 'カテゴリ3' },
    { id: 5, name: 'カテゴリ4' }
  ]
+
+ include ActiveHash::Associations
+ has_many :category
+
  end
